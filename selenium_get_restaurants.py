@@ -67,7 +67,7 @@ def get_restaurant_info(browser=None, url=''):
 
     title = title_element[0].text if title_element else None
     phone = (unquote(phone_element[0].get_attribute('href')).replace(u'\xa0', ' ')).lstrip('tel:') if phone_element else None
-    rest_link = links_element[1].get_attribute('href') if links_element else None
+    rest_link = links_element[1].get_attribute('href') if len(links_element) == 2 else None
     fb_link = links_element[2].get_attribute('href') if len(links_element) >= 3 else None
     rating = rating_element[0].text if rating_element else None
     rating_count = rating_count_element[0].text.split(' ')[1] if rating_count_element else None
