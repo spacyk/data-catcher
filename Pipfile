@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+backcall = "==0.1.0"
+colorama = "==0.4.0"
+decorator = "==4.3.0"
+ipython = "==7.0.1"
+jedi = "==0.13.1"
+parso = "==0.3.1"
+pickleshare = "==0.7.5"
+selenium = "==3.14.1"
+simplegeneric = "==0.8.1"
+six = "==1.11.0"
+traitlets = "==4.3.2"
+unicodecsv = "==0.14.1"
+"urllib3" = "==1.23"
+wcwidth = "==0.1.7"
+ipython_genutils = "==0.2.0"
+prompt_toolkit = "==2.0.6"
+Pygments = "==2.2.0"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"
