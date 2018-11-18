@@ -6,6 +6,9 @@ class BrickSetSpider(scrapy.Spider):
     start_urls = ['https://www.slevomat.cz/praha/zabava-a-volny-cas/adrenalinove-zazitky']
     page_number = 1
 
+    custom_settings = {
+        'FEED_URI': '/home/spacyk/Projects/data-catcher/events.csv'
+    }
 
     def parse(self, response):
         self.page_number += 1
