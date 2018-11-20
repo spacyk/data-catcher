@@ -1,8 +1,13 @@
 FEED_FORMAT = 'csv'
 
-FEED_EXPORT_FIELDS = ['name', 'pieces', 'image']
+FEED_EXPORT_FIELDS = ['name', 'webpage', 'email', 'phone', 'rating', 'ratings_number']
 
-FEED_URI = '/home/spacyk/Projects/data-catcher/lego.csv'
+FEED_URI = '/home/spacyk/Projects/data-catcher/test.csv'
+
+DOWNLOAD_DELAY = 1
+AJAXCRAWL_ENABLED = True
+COOKIES_ENABLED = False
+RETRY_ENABLED = True
 
 AUTOTHROTTLE_ENABLED = True
 AUTOTHROTTLE_START_DELAY = 3
