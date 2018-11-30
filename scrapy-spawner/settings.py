@@ -4,7 +4,7 @@ FEED_EXPORT_FIELDS = ['name', 'webpage', 'email', 'phone', 'rating', 'ratings_nu
 
 FEED_URI = '/home/spacyk/Projects/data-catcher/test.csv'
 
-DOWNLOAD_DELAY = 1
+DOWNLOAD_DELAY = 2
 AJAXCRAWL_ENABLED = True
 COOKIES_ENABLED = False
 RETRY_ENABLED = True

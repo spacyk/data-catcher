@@ -4,7 +4,12 @@ import scrapy
 class BrickSetSpider(scrapy.Spider):
     name = "brickset_spider"
     start_urls = ['http://brickset.com/sets/year-2016']
+    '//*[@id="body"]/div[1]/div/div/section/article[1]'
+    custom_settings = {
+        'FEED_URI': '/home/spacyk/Projects/data-catcher/test_lego.csv',
+        'FEED_EXPORT_FIELDS': ['name', 'pieces', 'minifigs', 'image']
 
+    }
 
     def parse(self, response):
         SET_SELECTOR = '.set'

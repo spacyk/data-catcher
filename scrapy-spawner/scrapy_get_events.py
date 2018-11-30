@@ -7,7 +7,8 @@ class AdventureEvents(scrapy.Spider):
     page_number = 1
 
     custom_settings = {
-        'FEED_URI': '/home/spacyk/Projects/data-catcher/test.csv'
+        'FEED_URI': '/home/spacyk/Projects/data-catcher/test_events.csv',
+        'FEED_EXPORT_FIELDS': ['name', 'webpage', 'email', 'phone', 'rating', 'ratings_number']
     }
 
     def parse(self, response):
