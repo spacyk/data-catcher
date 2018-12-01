@@ -8,6 +8,7 @@ from scrapy_get_events import AdventureEvents
 from scrapy_get_lego import BrickSetSpider
 from scrapy_get_etsy import EtsySpider
 from scrapy_get_sashe import SasheSpider
+from scrapy_get_generic import GenericSpider
 
 
 def main():
@@ -17,7 +18,8 @@ def main():
     #process.crawl(AdventureEvents)
     #process.crawl(BrickSetSpider)
     #process.crawl(EtsySpider)
-    process.crawl(SasheSpider)
+    #process.crawl(SasheSpider)
+    process.crawl(GenericSpider)
     process.start()
 
 if __name__ == "__main__":

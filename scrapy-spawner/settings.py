@@ -1,6 +1,6 @@
 FEED_FORMAT = 'csv'
 
-FEED_EXPORT_FIELDS = ['name', 'webpage', 'email', 'phone', 'rating', 'ratings_number']
+#FEED_EXPORT_FIELDS = ['name', 'webpage', 'email', 'phone', 'rating', 'ratings_number']
 
 FEED_URI = '/home/spacyk/Projects/data-catcher/test.csv'
 
