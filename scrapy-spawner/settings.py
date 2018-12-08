@@ -4,7 +4,7 @@ FEED_FORMAT = 'csv'
 
 FEED_URI = '/home/spacyk/Projects/data-catcher/test.csv'
 
-DOWNLOAD_DELAY = 2
+DOWNLOAD_DELAY = 3
 AJAXCRAWL_ENABLED = True
 COOKIES_ENABLED = False
 RETRY_ENABLED = True
