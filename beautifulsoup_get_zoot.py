@@ -72,8 +72,8 @@ def filter_with_bigger_price(price=30):
 	session.close()
 
 
-#get_zoot_dresses()
-filter_with_bigger_price()
+get_zoot_dresses()
+#filter_with_bigger_price()
 
 
 

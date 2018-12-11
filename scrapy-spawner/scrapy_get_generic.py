@@ -1,3 +1,5 @@
+import logging
+
 import scrapy
 
 
@@ -28,6 +30,7 @@ class GenericSpider(scrapy.Spider):
 
         self.page_number += 1
         next_page = f'{self.start_urls[0]}stranka/{self.page_number}'
+        logging.info(f'Scraping page: {self.page_number}')
         if next_page:
             yield scrapy.Request(
                 response.urljoin(next_page),
