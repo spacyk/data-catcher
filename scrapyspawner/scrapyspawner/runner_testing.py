@@ -10,6 +10,7 @@ from scrapy_get_lego import BrickSetSpider
 from scrapy_get_etsy import EtsySpider
 from scrapy_get_sashe import SasheSpider
 from scrapy_get_generic import GenericSpider
+from runner import GenericRunner
 
 if not os.path.exists('conf/app.cfg'):
 	print('App configuration missing! [conf/app.cfg]')
@@ -30,5 +31,10 @@ def main():
     process.crawl(GenericSpider)
     process.start()
 
+def test_runner_class():
+    runner = GenericRunner()
+    runner.scrape()
+
 if __name__ == "__main__":
-    main()
+    #main()
+    test_runner_class()

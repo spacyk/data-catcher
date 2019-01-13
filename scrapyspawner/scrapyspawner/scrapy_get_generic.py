@@ -30,7 +30,7 @@ class GenericSpider(scrapy.Spider):
             yield product_data
 
         self.page_number += 1
-        next_page = f'{self.start_urls[0]}stranka/{self.page_number}'
+        next_page = f'{self.start_urls[0]}{self.page_changing_string}{self.page_number}'
         logging.info(f'Scraping page: {self.page_number}')
         if next_page:
             yield scrapy.Request(
@@ -39,8 +39,7 @@ class GenericSpider(scrapy.Spider):
             )
 
     def find_products_list(self, response):
-        SELECTOR = '//article[@class="js-productList__items productList__items productList__items--hasHoverImg"]' #ZOOT working
-        self.products_list = response.xpath(SELECTOR)
+        self.products_list = response.xpath(self.xpath_element_definition)
 
 
     def get_products_data(self):
