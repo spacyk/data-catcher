@@ -5,16 +5,14 @@ import scrapy
 
 class GenericSpider(scrapy.Spider):
     name = "generic_spider"
-    page_number = 1
-    prepared = False
-    SET_SELECTOR = None
+    page_number = 0
     products_list = []
 
     custom_settings = {
         'FEED_URI': '/home/spacyk/Projects/data-catcher/generic_output.csv',
     }
 
-    def __init__(self, url, page_changing_string, xpath_element_definition):
+    def __init__(self, url='', page_changing_string='', xpath_element_definition=''):
         super().__init__(start_urls=[url])
         self.page_changing_string = page_changing_string
         self.xpath_element_definition = xpath_element_definition
@@ -23,14 +21,14 @@ class GenericSpider(scrapy.Spider):
     def parse(self, response):
 
         self.find_products_list(response)
-
         if not self.products_list:
-            return
+            raise ElementsNotFound
+
         for product_data in self.get_products_data():
             yield product_data
 
         self.page_number += 1
-        next_page = f'{self.start_urls[0]}{self.page_changing_string}{self.page_number}'
+        next_page = f'{self.start_urls[0]}{self.page_changing_string}{self.page_number*20}/'
         logging.info(f'Scraping page: {self.page_number}')
         if next_page:
             yield scrapy.Request(
@@ -51,3 +49,7 @@ class GenericSpider(scrapy.Spider):
             yield {
                 f'field_{index}': value for index, value in enumerate(relevant_attribs)
             }
+
+
+class ElementsNotFound(Exception):
+    """Your xpath defined elements were not found on the page"""

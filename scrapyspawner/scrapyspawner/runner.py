@@ -14,7 +14,12 @@ if not os.path.exists('conf/app.cfg'):
 
 class GenericRunner:
 
-    def __init__(self):
+    def __init__(self, url='', page_changing_string='', xpath_element_definition=''):
+        if not all([url, xpath_element_definition]):
+            raise ValueError("One of the mandatory arguments is not specified")
+        self.url = url
+        self.page_changing_string = page_changing_string
+        self.xpath_element_definition = xpath_element_definition
         self.config = configparser.ConfigParser()
         self.config.read('conf/app.cfg')
         self.settings = Settings()
@@ -22,10 +27,7 @@ class GenericRunner:
         self.process = CrawlerProcess(self.settings)
 
     def scrape(self):
-        url = 'https://www.zoot.sk/kategoria/22911/zeny/saty/'
-        page_changing_string = 'stranka/'
-        xpath_element_definition = '//article[@class="js-productList__items productList__items productList__items--hasHoverImg"]'
         self.process.crawl(
-            GenericSpider, url, page_changing_string, xpath_element_definition
+            GenericSpider, url=self.url, page_changing_string=self.page_changing_string, xpath_element_definition=self.xpath_element_definition
         )
         self.process.start()

@@ -5,9 +5,9 @@ import scrapy
 
 class GenericSpider(scrapy.Spider):
     name = "generic_spider"
-    #start_urls = ['https://www.sashe.sk/handmade/prstene-pevne_____tepanie']
-    #start_urls = ['https://www.etsy.com/c/handmade/jewelry-and-accessories?explicit=1&min=200&max=300&free_shipping=true&locationQuery=3077311']
-    #start_urls = ['https://www.slevomat.cz/praha/zabava-a-volny-cas/adrenalinove-zazitky']
+    #start_urls = ['https://www.sashe.sk/handmade/prstene-pevne_____tepanie/']
+    #start_urls = ['https://www.etsy.com/c/handmade/jewelry-and-accessories?explicit=1&min=200&max=300&free_shipping=true&locationQuery=3077311/']
+    #start_urls = ['https://www.slevomat.cz/praha/zabava-a-volny-cas/adrenalinove-zazitky/']
     #start_urls = ['https://mobil.bazos.cz/apple/']
     start_urls = ['https://www.zoot.sk/kategoria/22911/zeny/saty/']
     page_number = 1
