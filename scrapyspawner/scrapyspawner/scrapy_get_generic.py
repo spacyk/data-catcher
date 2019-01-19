@@ -10,6 +10,16 @@ class GenericSpider(scrapy.Spider):
 
     custom_settings = {
         'FEED_URI': '/home/spacyk/Projects/data-catcher/generic_output.csv',
+        'FEED_FORMAT': 'csv',
+        'DOWNLOAD_DELAY': 3,
+        'AJAXCRAWL_ENABLED': True,
+        'COOKIES_ENABLED': False,
+        'RETRY_ENABLED' : True,
+        'AUTOTHROTTLE_ENABLED': True,
+        'AUTOTHROTTLE_START_DELAY': 3,
+        'AUTOTHROTTLE_MAX_DELAY': 50,
+        'AUTOTHROTTLE_TARGET_CONCURRENCY': 1,
+        'AUTOTHROTTLE_DEBUG': False
     }
 
     def __init__(self, url='', page_changing_string='', xpath_element_definition=''):
