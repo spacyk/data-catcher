@@ -4,10 +4,6 @@ from scrapy.crawler import CrawlerProcess
 
 from scrapy_get_generic import GenericSpider
 
-if not os.path.exists('conf/app.cfg'):
-    print('App configuration missing! [conf/app.cfg]')
-    exit(1)
-
 
 class GenericRunner:
 

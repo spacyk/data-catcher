@@ -1,11 +1,4 @@
-import os
-
 from runner import GenericRunner
-
-if not os.path.exists('conf/app.cfg'):
-	print('App configuration missing! [conf/app.cfg]')
-	exit(1)
-
 
 
 def test_runner_class():

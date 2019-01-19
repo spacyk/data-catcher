@@ -7,6 +7,7 @@ class SasheSpider(scrapy.Spider):
     page_number = 1
 
     custom_settings = {
+        'FEED_FORMAT': 'csv',
         'FEED_URI': '/home/spacyk/Projects/data-catcher/test_sashe.csv',
         'FEED_EXPORT_FIELDS': ['name', 'price']
     }
@@ -19,6 +20,7 @@ class SasheSpider(scrapy.Spider):
 
             NAME_SELECTOR = './/div/div[3]/text()'
             PRICE_SELECTOR = './/div/div[2]/text()'
+
             yield {
                 'name': brickset.xpath(NAME_SELECTOR).extract_first(),
                 'price': brickset.xpath(PRICE_SELECTOR).extract_first()
