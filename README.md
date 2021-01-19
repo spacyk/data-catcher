@@ -1,15 +1,15 @@
 # Data Catcher
 
-Project aimed to compare different options in python to obtain data from webs
+An attempt to create universal product scraper using `Scrapy`,
+an open source framework for extracting data from the web.
+https://scrapy.org/
 
-## Install requirements
+The intention of this project was to create a product data scraper that could be used
+universally for any "product listing" website with a minimal site specific configuration.
 
-For Python 3.7 you can use pipenv
-```
-pipenv install
-```
+### Other scraping examples
 
-For other Python 3.x versions
-```
-pip install -r requirements.txt
-```
+In `other_scraping_examples` you can find eshop/platform specific scrapers which are using not only `scrapy` but also other modules
+that are suitable for data extraction as `Selenium` or `bs4`.
+
+*This project is not actively maintained.

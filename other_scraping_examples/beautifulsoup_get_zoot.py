@@ -2,7 +2,6 @@
 
 import requests
 from bs4 import BeautifulSoup
-
 from sqlalchemy.ext.declarative import declarative_base
 
 from sqlalchemy import Column, Integer, String, create_engine, Float
@@ -14,11 +13,13 @@ engine = create_engine('sqlite:///data.sqlite', echo=True)
 
 Base = declarative_base(bind=engine)
 
+
 class Shop(Base):
 	__tablename__ = 'shops'
 	id = Column(Integer, primary_key=True)
 	name = Column(String(60))
 	dresses = relationship('Dress')
+
 
 class Dress(Base):
 	__tablename__= 'dresses'
@@ -30,8 +31,6 @@ class Dress(Base):
 
 	def __repr__(self):
 		return f'{self.id}, {self.brand}, {self.name}, {self.price}, {self.shop_id}'
-
-#Base.metadata.create_all()
 
 
 def get_zoot_dresses():
@@ -56,6 +55,7 @@ def get_zoot_dresses():
 	session.commit()
 	session.close()
 
+
 def filter_with_bigger_price(price=30):
 	Session = sessionmaker(bind=engine)
 	session = Session()
@@ -73,7 +73,7 @@ def filter_with_bigger_price(price=30):
 
 
 get_zoot_dresses()
-#filter_with_bigger_price()
+# filter_with_bigger_price()
 
 
 

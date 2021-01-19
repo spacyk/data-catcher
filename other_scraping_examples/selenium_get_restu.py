@@ -9,7 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.keys import Keys
 
-TIMEOUT =  5
+TIMEOUT = 5
+
 
 def create_browser():
     option = webdriver.ChromeOptions()
@@ -17,6 +18,7 @@ def create_browser():
     option.add_argument("--headless")
     browser = webdriver.Chrome(executable_path="C:/Users/Aaa/Desktop/chromedriver_win32/chromedriver.exe", options=option)
     return browser
+
 
 def get_all_data():
     browser = create_browser()
@@ -81,6 +83,7 @@ def get_restaurant_info(browser=None, url=''):
 
 def main():
     get_all_data()
+
 
 if __name__ == "__main__":
     main()
